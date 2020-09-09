@@ -68,10 +68,11 @@ class SuratMasukController extends Controller
         $model = new SuratMasuk();
 
         if ($model->load(Yii::$app->request->post())  ) {
-             $model->file = UploadedFile::getInstance($model, 'file');
-             $alamatFile = Yii::getAlias('@backend/web/upload/').'file'.$model->file->extension;
-             //die(json_encode(Yii::getAlias('@backend/web/upload')));
-             $model->file->saveAs($alamatFile);
+            $berkasFile = UploadedFile::getInstance($model, 'image');
+            $alamatFile = 'upload/'. $model->no_surat.'.'. $berkasFile->extension;
+            $berkasFile->saveAs($alamatFile);
+            $model->file = $alamatFile;
+            $model->state = false;
             if (!$model->save()){
                 die(json_encode($model->errors));
             }

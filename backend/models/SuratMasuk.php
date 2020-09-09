@@ -21,6 +21,7 @@ use Yii;
  */
 class SuratMasuk extends \yii\db\ActiveRecord
 {
+    public $image;
     /**
      * {@inheritdoc}
      */
@@ -37,10 +38,10 @@ class SuratMasuk extends \yii\db\ActiveRecord
         return [
             [['pengirim', 'no_surat', 'tanggal_surat', 'tanggal_diteruskan', 'perihal', 'sifat', 'file'], 'required', 'message' => '{attribute} harus diisi'],
             [['tanggal_surat', 'tanggal_diteruskan'], 'safe'],
-            [['isi_ringkas', 'catatan'], 'string'],
+            [['isi_ringkas', 'catatan','file'], 'string'],
             [['state'], 'integer'],
             [['pengirim', 'no_surat', 'perihal', 'sifat'], 'string', 'max' => 255],
-            [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
+            [['image'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
     }
 

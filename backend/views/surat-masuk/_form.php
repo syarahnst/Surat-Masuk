@@ -45,7 +45,8 @@ use dosamigos\datepicker\DatePicker;
                     // 'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
                     'clientOptions' => [
                         'autoclose' => true,
-                        'format' => 'dd-mm-yyyy'
+                        'format' => 'yyyy-mm-dd'
+                        // 'format' => 'dd-mm-yyyy'
                     ]
             ]);?>
         </div>
@@ -59,7 +60,8 @@ use dosamigos\datepicker\DatePicker;
                     // 'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
                     'clientOptions' => [
                         'autoclose' => true,
-                        'format' => 'dd-mm-yyyy'
+                        'format' => 'yyyy-mm-dd'
+                        // 'format' => 'dd-mm-yyyy'
                     ]
             ]);?>
         </div>
@@ -79,7 +81,7 @@ use dosamigos\datepicker\DatePicker;
 
     <div class="col-md-12">
     <div class="col-md-12">
-        <?= $form->field($model, 'file')->fileInput() ?>
+        <?= $form->field($model, 'image')->fileInput() ?>
     </div>
     </div>
 

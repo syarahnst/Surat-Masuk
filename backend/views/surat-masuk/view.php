@@ -38,8 +38,33 @@ $this->params['breadcrumbs'][] = $this->title;
             'isi_ringkas:ntext',
             'catatan:ntext',
             'sifat',
-            'file:ntext',
-            'state',
+            [
+                'attribute' => 'file',
+                'value' => function($model){
+                    $baseUrl = Yii::getAlias('@web/');
+                    return $baseUrl.$model->file;
+                },
+                'format' => ['image', ['width' => '500', 'height' => '400']],
+            ],
+            // [
+            //     'attribute' => 'file',
+            //     'format'    => 'raw',
+            //     'value' => function ($model) {
+            //         if ($model->file) {
+            //             $baseUrl = Yii::getAlias('@web/');
+            //             return Html::a(
+            //                 'Lihat Berkas',
+            //                 $baseUrl . $model->file,
+            //                 [
+            //                     'title' => 'Go!',
+            //                     'target' => '_blank'
+            //                 ]
+            //             );
+            //         }
+            //     }
+            // ],
+
+            // 'state',
         ],
     ]) ?>
 
