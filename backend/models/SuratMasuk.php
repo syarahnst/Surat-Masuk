@@ -60,8 +60,9 @@ class SuratMasuk extends \yii\db\ActiveRecord
             'isi_ringkas' => 'Isi Ringkas',
             'catatan' => 'Catatan',
             'sifat' => 'Sifat',
-            'file' => 'File',
+            'file' => 'Lampiran',
             'state' => 'State',
+            'image' => 'Lampiran'
         ];
     }
 }
