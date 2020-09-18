@@ -72,7 +72,7 @@ class SuratMasukController extends Controller
             $alamatFile = 'upload/'. $model->no_surat.'.'. $berkasFile->extension;
             $berkasFile->saveAs($alamatFile);
             $model->file = $alamatFile;
-            $model->state = false;
+            $model->state = 0;
             if (!$model->save()){
                 die(json_encode($model->errors));
             }
