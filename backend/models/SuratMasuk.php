@@ -41,7 +41,7 @@ class SuratMasuk extends \yii\db\ActiveRecord
             [['isi_ringkas', 'catatan','file'], 'string'],
             [['state'], 'integer'],
             [['pengirim', 'no_surat', 'perihal', 'sifat'], 'string', 'max' => 255],
-            [['image'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+            [['image'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, pdf, jpeg, doc,docx'],
         ];
     }
 
